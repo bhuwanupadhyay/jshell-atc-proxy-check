@@ -26,11 +26,24 @@ prepare_jars(){
     fi
 }
 
-# read libs.properties file to get url and jar file name
+# read libs properties file to get url and jar file name
+if [ -z "$1" ]; then
+    echo "Usage: $0 <libs.properties> <env_file> <script_file>"
+    exit 1
+fi
+
 while IFS='=' read -r key value
 do
   prepare_jars $key $value
-done < "$SCRIPT_DIR/libs.properties"
+done < "$1"
+
+# read env file to set environment variables
+if [ -z "$2" ]; then
+    echo "Usage: $0 <libs.properties> <env_file> <script_file>"
+    exit 1
+fi
+
+source $2
 
 # Create a temporary directory
 TMP=$(mktemp -d)
@@ -39,7 +52,8 @@ mkdir -p "$TMP/.java/.userPrefs"
 chmod -R 755 "$TMP"
 
 # Prepare the JShell script
-tail -n +2 "$@" >> "$TMP/run"
+args="${@:3}"  # Get all arguments starting from the third one
+tail -n +2 "$args" >> "$TMP/run"
 echo "/exit" >> "$TMP/run"
 
 # Set up Java classpath
