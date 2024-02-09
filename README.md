@@ -1,4 +1,4 @@
-# JSHELL Wrapper Script
+# JSHELL Wrapper
 
 This is a simple wrapper script to run a jshell script with a set of libraries and environment variables.
 
