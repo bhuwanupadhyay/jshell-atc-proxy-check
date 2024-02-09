@@ -1,2 +1,2 @@
-# Wrapper script for apache HTTP client to proxy settings
+# JSHELL Wrapper Script
 
