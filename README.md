@@ -5,7 +5,7 @@ This is a simple wrapper script to run a jshell script with a set of libraries a
 ## Usage
 
 ```bash
-./jshell-wrapper.sh <libs.properties> <env.sh> <java_script.sh>
+./jshellw <libs.properties> <env.sh> <java_script.sh>
 ```
 
 ## Example
