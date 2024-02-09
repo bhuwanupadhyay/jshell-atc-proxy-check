@@ -6,7 +6,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClients;
 
 String proxyHost = System.getenv("PROXY_HOST");
-int proxyPort = Integer.parseInt(System.getenv("PROXY_PORT"));
+String proxyPort = System.getenv("PROXY_PORT");
 
 System.setProperty("http.proxyHost", proxyHost);
 System.setProperty("http.proxyPort", proxyPort);
