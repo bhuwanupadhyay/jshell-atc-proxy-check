@@ -1,3 +1,0 @@
-Module1=MergeModule1
-Module2=MergeModule1
-Module3=MergeModule2
